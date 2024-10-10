@@ -30,33 +30,35 @@ public class WorkingWithClasses {
     }
 
     public static void CreatingAProduct() {
-        Scanner stringScanner= new Scanner(System.in);
-        Scanner scanner= new Scanner(System.in);
-        String prodName; double prodPrice; int prodQuantity;
+        Scanner stringScanner = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
+        String prodName;
+        double prodPrice;
+        int prodQuantity;
         System.out.print("\n Product name: ");
-        prodName =stringScanner.nextLine();
+        prodName = stringScanner.nextLine();
         System.out.print("\n Price: ");
-        prodPrice=scanner.nextDouble();
+        prodPrice = scanner.nextDouble();
         System.out.print("\n Quantity: ");
-        prodQuantity= scanner.nextInt();
+        prodQuantity = scanner.nextInt();
 
-        Product prod = new Product(prodName,prodPrice,prodQuantity );
-        System.out.println("\nTotal value in stock: "+ NumberFormat.getCurrencyInstance().format(prod.totalValueInStock()));
-        System.out.println("Product: "+prod);
+        Product prod = new Product(prodName, prodPrice, prodQuantity);
+        System.out.println("\nTotal value in stock: " + NumberFormat.getCurrencyInstance().format(prod.totalValueInStock()));
+        System.out.println("Product: " + prod);
 
         System.out.println("\nAdd product to the stock: ");
         prod.AddProducts(scanner.nextInt());
-        System.out.println("Product: "+prod);
+        System.out.println("Product: " + prod);
 
         System.out.println("\nremove product from the stock: ");
         prod.removeProducts(scanner.nextInt());
-        System.out.println("Product: "+prod);
+        System.out.println("Product: " + prod);
 
         scanner.close();
         stringScanner.close();
     }
 
-    public static void rentingRooms(){
+    public static void rentingRooms() {
         Scanner sc = new Scanner(System.in);
         Scanner stringsScanner = new Scanner(System.in);
 
@@ -66,7 +68,7 @@ public class WorkingWithClasses {
 
         Rent[] rooms = new Rent[n];
         for (int i = 0; i < rooms.length; i++) {
-            System.out.println("Rent #" + (1+i) + ":");
+            System.out.println("Rent #" + (1 + i) + ":");
             System.out.print("Name: ");
             String name = stringsScanner.nextLine();
             System.out.print("Email: ");
@@ -81,13 +83,12 @@ public class WorkingWithClasses {
         System.out.println("Busy rooms:");
         for (int i = 0; i < rooms.length; i++) {
 
-                System.out.println(rooms[i]);
+            System.out.println(rooms[i]);
 
         }
-
+        stringsScanner.close();
         sc.close();
     }
-
 
 
 }
