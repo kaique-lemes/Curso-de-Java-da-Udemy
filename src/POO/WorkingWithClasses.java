@@ -1,6 +1,7 @@
 package POO;
 
 import POO.Classes.Product;
+import POO.Classes.Rent;
 import POO.Classes.Triangulo;
 
 import java.text.NumberFormat;
@@ -54,5 +55,39 @@ public class WorkingWithClasses {
         scanner.close();
         stringScanner.close();
     }
+
+    public static void rentingRooms(){
+        Scanner sc = new Scanner(System.in);
+        Scanner stringsScanner = new Scanner(System.in);
+
+
+        System.out.print("How many rooms will be rented? ");
+        int n = sc.nextInt();
+
+        Rent[] rooms = new Rent[n];
+        for (int i = 0; i < rooms.length; i++) {
+            System.out.println("Rent #" + (1+i) + ":");
+            System.out.print("Name: ");
+            String name = stringsScanner.nextLine();
+            System.out.print("Email: ");
+            String email = stringsScanner.nextLine();
+            System.out.print("Room: ");
+            int room = sc.nextInt();
+
+
+            rooms[i] = new Rent(name, email, room);
+        }
+
+        System.out.println("Busy rooms:");
+        for (int i = 0; i < rooms.length; i++) {
+
+                System.out.println(rooms[i]);
+
+        }
+
+        sc.close();
+    }
+
+
 
 }
