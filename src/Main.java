@@ -10,7 +10,7 @@ public class Main {
        //Calculate the area o the triangle
        // WorkingWithClasses.TrianguloCalc();
         //Create an object and print it by toString method
-       // WorkingWithClasses.CreatingAProduct();
+        WorkingWithClasses.CreatingAProduct();
 
     }
 }

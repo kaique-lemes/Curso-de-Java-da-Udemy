@@ -3,6 +3,7 @@ package POO;
 import POO.Classes.Product;
 import POO.Classes.Triangulo;
 
+import java.text.NumberFormat;
 import java.util.Scanner;
 
 public class WorkingWithClasses {
@@ -39,8 +40,17 @@ public class WorkingWithClasses {
         prodQuantity= scanner.nextInt();
 
         Product prod = new Product(prodName,prodPrice,prodQuantity );
-        System.out.println("\nTotal value in stock: "+prod.totalValueInStock());
+        System.out.println("\nTotal value in stock: "+ NumberFormat.getCurrencyInstance().format(prod.totalValueInStock()));
         System.out.println("Product: "+prod);
+
+        System.out.println("\nAdd product to the stock: ");
+        prod.AddProducts(scanner.nextInt());
+        System.out.println("Product: "+prod);
+
+        System.out.println("\nremove product from the stock: ");
+        prod.removeProducts(scanner.nextInt());
+        System.out.println("Product: "+prod);
+
         scanner.close();
         stringScanner.close();
     }

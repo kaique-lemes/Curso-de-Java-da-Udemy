@@ -1,5 +1,7 @@
 package POO.Classes;
 
+import java.text.NumberFormat;
+
 public class Product {
     private String name;
     private double price;
@@ -16,15 +18,21 @@ public class Product {
     }
 
     public void removeProducts(int quantity) {
-        this.quantity -= quantity;
+        if(quantity>0){
+            this.quantity -= quantity;
+        }
+
     }
 
     public void AddProducts(int quantity) {
-        this.quantity += quantity;
+        if(quantity>0){
+            this.quantity += quantity;
+        }
+
     }
 
 public String toString(){
 
-    return "\n\tName: " +this.name+"\n\tPrice: "+this.price+"\n\tQuantity: "+this.quantity;
+    return "\n\tName: " +this.name+"\n\tPrice: "+ NumberFormat.getCurrencyInstance().format(this.price)+"\n\tQuantity: "+this.quantity;
 }
 }
