@@ -1,5 +1,6 @@
 package POO;
 
+import POO.Classes.OptionalData;
 import POO.Classes.Product;
 import POO.Classes.Rent;
 import POO.Classes.Triangulo;
@@ -88,6 +89,42 @@ public class WorkingWithClasses {
         }
         stringsScanner.close();
         sc.close();
+    }
+
+    public static void wrapperClass(){
+        Scanner scanner = new Scanner(System.in);
+
+        // Solicita a idade ao usuário
+        System.out.println("Por favor, insira a idade (ou deixe em branco para null):");
+        String idadeInput = scanner.nextLine();
+        Integer idade = null;
+
+        if (!idadeInput.trim().isEmpty()) {
+            try {
+                idade = Integer.parseInt(idadeInput);  // Boxing automático
+            } catch (NumberFormatException e) {
+                System.out.println("Entrada inválida. A idade será null.");
+            }
+        }
+
+        // Solicita o salário ao usuário
+        System.out.println("Por favor, insira o salário (ou deixe em branco para null):");
+        String salarioInput = scanner.nextLine();
+        Double salario = null;
+
+        if (!salarioInput.trim().isEmpty()) {
+            try {
+                salario = Double.parseDouble(salarioInput);  // Boxing automático
+            } catch (NumberFormatException e) {
+                System.out.println("Entrada inválida. O salário será null.");
+            }
+        }
+
+        // Criando a instância de OptionalData com os valores inseridos
+        OptionalData pessoa = new OptionalData(idade, salario);
+
+        // Exibindo os dados com unboxing
+        pessoa.mostrarDados();
     }
 
 
